@@ -1,0 +1,30 @@
+@charset "utf-8";
+body,td,th,input{font-size:12px;font-family:arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;}
+body{margin:0;background-color:#FAFAFA;line-height:1.7;color:#333;}
+a:link,a:visited,a:active{color:#333;text-decoration:none;}
+a:hover{color:#286fbf;}
+p{text-indent:24px;}
+
+#no1,#no2,#no4{font-size:47px;display:none;position:absolute;}
+#no3{font-size:37px;text-align:center;margin-top:30px;display:none;}
+#no4{overflow:hidden;background-image:url(flogo.png);width:0;height:60px;}
+#no5{bottom:20px;right:20px;font-size:22px;line-height:20px;display:none;position:absolute;}
+
+#license{width:1000px;margin:auto;display:none;padding-top:20px;}
+#licenseBtns{padding:30px;text-align:center;}
+
+#step2{background-color:#333;color:#FFF;width:980px;margin:auto;margin-top:20px;padding:10px;display:none;height:400px;}
+#step2Txt{height:400px;overflow:hidden;word-break:break-all;}
+
+#guiBgLogo{background-image:url(logo.png);width:100px;height:60px;position:absolute;left:10px;top:10px;display:none;}
+#progressBar{border:solid 1px #6C9AB0;position:absolute;padding:1px;width:150px;top:100px;left:73px;display:none;}
+#progressBarDiv{height:5px;background-color:#6C9AB0;line-height:1px;font-size:1px;}
+
+#window{border:solid 1px #6C9AB0;position:absolute;left:10px;top:10px;background-color:#8DCAE6;box-shadow:0 0 5px rgba(0,0,0,.7);display:none;}
+#windowTitle{text-align:center;font-size:14px;padding:5px;cursor:default;}
+#windowContent{width:600px;height:350px;background-color:#F5F6F7;padding:20px;}
+#windowControls{position:absolute;bottom:20px;right:20px;}
+
+.tableInfo td{padding:5px;}
+.button{border:solid 1px #333;padding:5px 20px;background-color:#FAFAFA;}
+.textbox{width:200px;padding:5px;border:solid 1px #6C9AB0;}

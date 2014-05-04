@@ -1,0 +1,73 @@
+
+<p id="result"> </p>
+<form action="?mode=admin&action=mailConfig" method="post">
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="3">邮件设置</th>
+      </tr>
+    </thead>
+    <tr>
+      <td class="table_right">选择邮件发送方式：</td>
+      <input type="hidden" value="{html:MAILWAY}" id="mailway" />
+      <td style="width:50%;"><input type="radio" name="MAILWAY"  value="sendmail" id="waySendmail"  />
+        <label for="waySendmail">SMTP 模块发送</label>
+        <input type="radio" name="MAILWAY"  value="mail" id="wayMail"/>
+        <label for="wayMail">mail() 函数发送</label></td>
+      <td><span></span></td>
+    </tr>
+    <tr class="forSendmail">
+      <td class="table_right">SMTP服务器：</td>
+      <td><input type="text" name="SMTPSERVER" value="{html:SMTPSERVER}"  title="填写SMTP服务器" /></td>
+      <td><span>比如qq为（smtp.qq.com）</span></td>
+    </tr>
+    <tr class="forSendmail">
+      <td class="table_right">SMTP服务器端口：</td>
+      <td><input type="text" name="SMTPSERVERPORT" value="{html:SMTPSERVERPORT}" title="填写SMTP服务器端口" /></td>
+      <td><span>SMTP服务器端口 默认为25</span></td>
+    </tr>
+    <tr class="forSendmail">
+      <td class="table_right">SMTP服务器的用户邮箱 ：</td>
+      <td><input type="text" name="SMTPUSERMAIL" value="{html:SMTPUSERMAIL}" title="填写SMTP服务器的用户邮箱" /></td>
+      <td><span>填写SMTP服务器的用户邮箱</span></td>
+    </tr>
+    <tr class="forSendmail">
+      <td class="table_right">SMTP服务器的用户名 ：</td>
+      <td><input type="text" name="SMTPUSER" value="{html:SMTPUSER}" title="填写SMTP服务器的用户帐号" /></td>
+      <td><span>填写SMTP服务器的用户帐号</span></td>
+    </tr>
+    <tr class="forSendmail">
+      <td class="table_right">SMTP服务器的用户密码 ：</td>
+      <td><input type="password" name="SMTPPASS" value="{html:SMTPPASS}" title="填写SMTP服务器的用户密码" /></td>
+      <td><span>填写SMTP服务器的用户密码</span></td>
+    </tr>
+    <tr>
+      <td class="table_right">邮件标题 ：</td>
+      <td><p>MAILSUBJECT：<strong>文件名</strong></p>
+        <input type="text" name="MAILSUBJECT" value="{html:MAILSUBJECT}" title="填写邮件标题 " /></td>
+      <td><span>填写邮件标题 </span></td>
+    </tr>
+    <tr>
+      <td class="table_right">邮件格式：</td>
+      <td><input type="text" name="MAILTYPE" value="{html:MAILTYPE}" title="邮件格式（HTML/TXT）"/></td>
+      <td><span>邮件格式（HTML/TXT）</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 测试邮箱 ：</td>
+      <td><input type="text" name="SMTPMAILTO" value="" title="测试邮箱" />
+        </td>
+      <td><input type="submit" name="mailTest" value="发送测试邮件" class="roundbtn" /></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 邮件主题 ：</td>
+      <td><p>MAILBODY：文件名：<strong>文件名</strong> 分享码：<strong>分享码</strong> 管理密码：<strong>管理密码</strong> 文件类型：<strong>文件类型</strong> 文件大小：<strong>文件大小</strong></p>
+        <textarea name="MAILBODY" title="邮件主题">{html:MAILBODY}</textarea></td>
+      <td><span>邮件主题(每行不要超过70个字符)</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"></td>
+      <td><input type="submit" value="更新"  name="mail_update" class="roundbtn" /></td>
+      <td></td>
+    </tr>
+  </table>
+</form>

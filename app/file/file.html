@@ -1,0 +1,66 @@
+<link type="text/css" href="{html:url}glob/css/global.css" rel="stylesheet" />
+<link type="text/css" href="{html:url}app/file/style.css" rel="stylesheet" />
+<div id="container">
+<div id="header">
+  <h1 class="logo"><a href="index.php" title="{html:title}"><img src="{html:url}/logo.gif" alt="FFS5" title="{html:title}" /></a></h1>
+</div>
+<div id="content">
+  <div class="fileinfo round_box">
+    <h2>文件信息</h2>
+    <div class="fileinfo_l">
+      <p>文件名称：{file:name}{file:quicklink}</p>
+      <p>分&nbsp;享&nbsp;码：{file:id} {html:favourite}</p>
+      <p>文件类型：{file:type}</p>
+    </div>
+    <div class="fileinfo_r">
+      <p>文件大小：{file:size}</p>
+      <p>上传时间：{file:up}</p>
+      <p>下载次数：{file:down}次</p>
+    </div>
+    <p class="line">&nbsp;</p>
+    <h2>文件简介</h2>
+    <div class="infoContent">{file:info}</div>
+    <p class="line">&nbsp;</p>
+    <p class="downSite"><strong>下载地址：</strong><span class="linkHidden">{file:downlink}</span><span class="linkTime" timer="{file:LINK_COUNTDOWN}">地址获取中...</span></p>
+    <p class="line">&nbsp;</p>
+    <p id="infoImgTips"><strong>链接地址：</strong>
+      <object type="application/x-shockwave-flash" data="{html:url}glob/copy/clipboard.swf" width="52" height="25" id="forLoadSwf" style="visibility: visible; " name="forLoadSwf">
+        <param name="movie" value="{html:url}glob/copy/clipboard.swf" />
+        <param name="wmode" value="transparent">
+        <param name="allowScriptAccess" value="always">
+        <param name="flashvars" value="content={file:viewlink}&amp;uri={html:url}glob/copy/flash_copy_btn.png">
+      </object>
+      &nbsp;<a href="{file:viewlink}">{file:viewlink}</a> <span id="forLoadSwfToBbs">
+      <object type="application/x-shockwave-flash" data="{html:url}glob/copy/clipboard.swf" width="100" height="25" style="visibility: visible; " id="forLoadSwfA" name="forLoadSwfA">
+        <param name="movie" value="{html:url}glob/copy/clipboard.swf" />
+        <param name="wmode" value="transparent">
+        <param name="allowScriptAccess" value="always">
+        <param name="flashvars" value="content=[url={file:viewlink}][img]{file:infoImg}[/img][/url]&amp;uri={html:url}glob/copy/tobbs.png">
+      </object>
+      </span></p>
+    <div class="guessYouLike">
+      <p class="line">&nbsp;</p>
+      <h2>猜你喜欢</h2>
+      <ul>
+        {file:youlike}
+      </ul>
+    </div>
+    <p class="line">&nbsp;</p>
+    <p> 
+      <!-- JiaThis Button BEGIN -->
+    <div id="jiathis_style_32x32"> <a class="jiathis_button_tsina"></a> <a class="jiathis_button_tqq"></a> <a class="jiathis_button_qzone"></a> <a class="jiathis_button_renren"></a> <a class="jiathis_button_tianya"></a> <a class="jiathis_button_tifeng"></a> <a class="jiathis_button_tsohu"></a> <a class="jiathis_button_t163"></a> <a class="jiathis_button_email"></a> <a class="jiathis_button_feixin"></a> </div>
+    <script type="text/javascript" src="http://v2.jiathis.com/code_mini/jia.js" charset="utf-8"></script> 
+    <!-- JiaThis Button END -->
+    </p>
+    <p class="line">&nbsp;</p>
+    <div class="AD">
+      <h2>赞助商广告</h2>
+      <div>{html:ad}</div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+function copySuccess(){
+	alert("复制成功！");
+}
+</script>

@@ -1,0 +1,73 @@
+<link type="text/css" href="{html:url}glob/css/global.css" rel="stylesheet" />
+<link type="text/css" href="{html:url}app/swf/style.css" rel="stylesheet" />
+<div id="container">
+  <div id="header">
+    <h1 class="logo"><a href="{html:url}" title="FFS5"><img src="logo.gif" alt="{html:name}" title="{html:name}" /></a></h1>
+  </div>
+  <div id="content">
+    <div class="swfBox rount_box">
+      <div id="showSwf">
+      </div>
+      <div class="swfInfBox">
+        <div class="swfInf">
+          <p><span>动&nbsp;&nbsp;画&nbsp;名：</span>{file:name}</p>
+          <p><span>分&nbsp;&nbsp;享&nbsp;码：</span>{file:id} {html:favourite}</p>
+          <p><span>大&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小：</span>{file:size}</p>
+          <p><span>预览次数：</span>{file:down}</p>
+          <p><span>上传时间：</span>{file:time}</p>
+          <p><span>在线预览：</span><a href="javascript:;" onClick="insert('{link:down}');">点击预览>></a></p>
+        </div>
+   <p class="line">&nbsp;</p>
+   <h2>动画简介</h2>
+    <div class="infoContent">{file:info}</div>
+    <p class="line">&nbsp;</p> 
+      </div>
+      <div class="swfLink">
+<p><span>下载地址：</span><span class="linkHidden"><a href="{link:down}"><img src="app/swf/bendi.png" /></a></span><span class="linkTime" timer="{file:LINK_COUNTDOWN}">地址获取中...</span></p>
+<p class="line">&nbsp;</p> 
+<p><span>外链地址：</span><span class="linkHidden"><object type="application/x-shockwave-flash" data="{html:url}glob/copy/clipboard.swf" width="52" height="25" id="forLoadSwf" name="forLoadSwf" style="visibility: visible; "><param name="movie" value="{html:url}glob/copy/clipboard.swf" /><param name="wmode" value="transparent"><param name="allowScriptAccess" value="always"><param name="flashvars" value="content={link:link}&amp;uri={html:url}glob/copy/flash_copy_btn.png"></object>&nbsp;{link:link}</span><span class="linkTime" timer="{file:LINK_COUNTDOWN}">地址获取中...</span></p>
+<p class="line">&nbsp;</p> 
+<p><span>欣赏地址：</span><object type="application/x-shockwave-flash" data="{html:url}glob/copy/clipboard.swf" width="52" height="25" id="forLoadSwfA" name="forLoadSwfA" style="visibility: visible; "><param name="movie" value="{html:url}glob/copy/clipboard.swf" /><param name="wmode" value="transparent"><param name="allowScriptAccess" value="always"><param name="flashvars" value="content={link:view}&amp;uri={html:url}glob/copy/flash_copy_btn.png"></object>&nbsp;<a href="{link:view}">{link:view}</a> </p>
+    <p class="line">&nbsp;</p>
+<div class="guessYouLike">
+<h2>猜你喜欢</h2>
+ <ul>{file:youlike}</ul>
+</div>
+    <p class="line">&nbsp;</p>
+        <p>
+      <!-- JiaThis Button BEGIN -->
+    <div id="jiathis_style_32x32">
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_renren"></a>
+	<a class="jiathis_button_tianya"></a>
+	<a class="jiathis_button_tifeng"></a>
+	<a class="jiathis_button_tsohu"></a>
+	<a class="jiathis_button_t163"></a>
+	<a class="jiathis_button_email"></a>
+	<a class="jiathis_button_feixin"></a>
+    </div>
+    <script type="text/javascript" src="http://v2.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+    </p>
+        <div class="swfTip round_box">使用提示:SWF文件外链的有效时间为{html:days}天，{html:days}天后您需要重新来本页获取外链。</div>
+        
+<p class="line">&nbsp;</p> 
+<div class="AD">
+<h2>赞助商广告</h2>
+ <div>{html:ad}</div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+function insert(url){
+	$('#showSwf').html('<object><embed src="'+url+'" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" /></embed></object>');
+	$('#showSwf').fadeIn("slow");
+}
+function copySuccess(){
+	alert("复制成功！");
+}
+</script>

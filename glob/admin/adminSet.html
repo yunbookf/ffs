@@ -1,0 +1,36 @@
+
+<p id="result"> </p>
+<form action="?mode=admin&action=adminSet" method="post">
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="3">管理员管理</th>
+      </tr>
+    </thead>
+    <tr>
+      <td class="table_right"> 管理员账号 ：</td>
+      <td style="width:50%;">admin <span>(不可更改)</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 旧管理密码 ：</td>
+      <td><input type="password" name="OLD_PASSWORD"   title="请输入旧管理密码"/></td>
+      <td><span></span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 新管理密码 ：</td>
+      <td><input type="password" name="ADMIN_PASSWORD"  title="请输入新管理密码" /></td>
+      <td><span></span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 确认新管理密码 ：</td>
+      <td><input type="password" name="ADMIN_PASSWORD_AGAIN"  title="请再次输入新管理密码" /></td>
+      <td><span></span></td>
+    </tr>
+    <tr>
+      <td class="table_right"></td>
+      <td><input type="submit" value="更新"  name="admin_update" class="roundbtn" /></td>
+      <td></td>
+    </tr>
+  </table>
+</form>

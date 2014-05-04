@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+<title>{html:title}--错误页</title>
+<meta name="keywords" content="{html:keywords}" />
+<meta name="description" content="{html:des}" />
+<script type="text/javascript" src="glob/res/jquery.js" ></script>
+<script type="text/javascript" src="glob/check/check.js" ></script>
+<link type="text/css" href="glob/error/error.css" rel="stylesheet" />
+<style type="text/css">
+.errorBox{ border:1px solid #f1f1f1; padding:10px; }
+.errorTitle{ height:40px; line-height:40px; font-size:16px; font-weight:bold; text-indent:45px; background:url({html:url}glob/error/error.gif) no-repeat;}
+.errorContent{ margin:20px;} 
+</style>
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <h1 class="logo"><a href="index.php" title="FFS5"><img src="logo.gif" alt="FFS5" title="FFS5" /></a></h1>
+  </div>
+  <div id="content">
+    <div class="errorBox round_box">
+    <div class="errorTitle">{error:title}</div>
+    <div  class="errorContent">{error:info}</div>
+    </div>
+    
+    
+  </div>
+</div>
+</body>
+</html>

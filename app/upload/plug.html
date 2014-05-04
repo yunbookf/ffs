@@ -1,0 +1,72 @@
+<script language="javascript" type="text/javascript" src="app/upload/system.js"></script>
+<script language="javascript" type="text/javascript" src="app/upload/juq2.js"></script>
+<link type="text/css" href="app/upload/style.css" rel="stylesheet" />
+<script type="text/javascript">
+$('#file_email').ready(function() {
+	var email = GetCookie('email');
+	$("#send_mail").val(email);
+});
+function email_set(){
+	var mail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+	var email = $('#send_mail').val();
+		if(!mail.exec(email)  || email.length < 6)
+		{
+			$('#file_email_info').html('<strong style="color:#F60;">邮箱格式不正确，请重新填写！</strong>');
+			$("#send_mail").focus();
+			return false;			
+			}	
+	SetCookie('email',email);
+	$('#jumpEmail').val("no");
+	$('#file_email_info').html('<strong>设置成功，文件上传成功后，您的邮箱将收到邮件！</strong>');
+	loading();
+}
+
+function jump(){
+	SetCookie('jumpEmail','ok');
+	$('#jumpEmail').val("yes");
+	$('#file_email_info').html('<strong>设置成功，文件上传成功后，您的邮箱将不会收到邮件！</strong>');
+	loading();
+	}
+
+/*后台设置不开启email*/
+function emailOn(){
+	 $.get('?/upload/config',function(a){
+		 var upload=jQuery.parseJSON(a);
+		 var upload_email=upload.upload_email;
+		 if(upload_email==0){jump();};
+		 });
+	}
+emailOn();
+
+function loading(){
+	var email = $('#send_mail').val();
+	var jumpEmail = $('#jumpEmail').val();
+	var username = GetCookie('MYFFS_username');
+	var regtime = GetCookie('MYFFS_regtime');
+	$('#file_email').delay(500).slideUp(800);
+	 $.get('?/upload/config',function(a){
+	  $('#file_upload').uploadify({
+		  'sizeLimit' :a.upsize,
+		  'sizeMin' :a.upsizemin,
+          'auto'      : true,
+	      'removeCompleted' : false,
+		  'multi'          : true,
+		  'fileExt'   :a.uptype,
+		  'fileDesc'    : 'Select Files',
+	      'queueSizeLimit' : a.upmax,
+		  'buttonImg'   : 'app/upload/upload.png',
+		  'scriptData'  : {'email':email,'jumpEmail':jumpEmail,'username':username,'regtime':regtime}
+      });
+  },'json');
+}
+function copySuccess(){
+	alert("复制成功！");
+}
+
+</script>
+<div id="file_email">
+<div id="file_email_info"><strong>设置发送邮箱地址，可以让您的邮箱在文件成功上传后收到包含文件信息的邮件！</strong></div>
+<div id="file_email_input"><input type="text" name="send_mail" id="send_mail"/><input type="hidden" value=""  id="jumpEmail" /></div>
+<div id="file_email_btn"><a href="javascript:;" class="round_btn" onclick="email_set();">设置</a> <a href="javascript:;" class="round_btn" onclick="jump();">跳过</a></div>
+</div>
+<div id="file_upload"></div>

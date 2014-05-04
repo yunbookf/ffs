@@ -1,0 +1,26 @@
+
+<p id="result"> </p>
+<form action="?mode=so&action=index" method="post">
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="3">搜索设置</th>
+      </tr>
+    </thead>
+    <tr>
+      <td class="table_right">每页显示数据 ：</td>
+      <td style="width:50%;"><input type="text" name="SEARCH_NUM" value="{html:SEARCH_NUM}"  title="条" /></td>
+      <td><span>（M条）</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 最多输出 ：</td>
+      <td><input type="text" name="SO_MAX" value="{html:SO_MAX}" title="条" /></td>
+      <td><span>（条） 当网站数据比较多的时候，设置此项能明显改善查询速度。0为不限制</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"></td>
+      <td><input type="submit" value="更新"  name="so_update" class="roundbtn" /></td>
+      <td></td>
+    </tr>
+  </table>
+</form>

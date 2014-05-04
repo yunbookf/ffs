@@ -1,0 +1,20 @@
+<style type="text/css">
+.soBar{ width:490px; margin:0 auto; padding-bottom:10px; background:url(app/so/btnBg.gif) no-repeat right top;}
+.soBar .soText{ width:300px; height:19px; padding:4px; border:1px solid #d9d9d9; border-top-color:#c0c0c0; font-size:14px; padding-left:3px;}
+.soBar .soText:focus{ border-color:#409dfe;}
+.soBar .soSubmit{ width:86px; height:29px; border:none; border:0; background: none; cursor:pointer; font-weight:bold; color:#666; line-height:25px;}
+.soBar .soSubmit:hover{ color:#444;}
+</style>
+    <div class="soBar" style="display:none">
+    <form action="app/so/tourl.php" method="post" target="_blank" onsubmit="return goSearch();">
+        <input type="text" id="search" class="soText" name="soText" />
+        <input type="submit" value="站 内 搜 索" class="soSubmit" name="inStie" />
+        <input type="submit" value="全 网 搜 索" class="soSubmit" name="allSite" />
+     </form>
+    </div>
+<script type="text/javascript">
+function goSearch(){
+var a=document.getElementById("search").value;
+if(a==""){return false;}
+}
+</script>

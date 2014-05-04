@@ -1,0 +1,31 @@
+<link type="text/css" href="{html:url}glob/css/global.css" rel="stylesheet" />
+<link type="text/css" href="{html:url}app/so/style.css" rel="stylesheet" />
+<script type="text/javascript">
+function goSearch(){
+var a=document.getElementById("soText").value;
+if(a==""){return false;};}
+</script>
+<div id="container">
+  <div id="header">
+    <h1 class="logo"><a href="{html:url}" title="FFS5"><img src="logo.gif" alt="FFS-Mini文件分享" title="FFS-Mini文件分享" /></a></h1>
+    <div class="soBar">
+      <div class="soBar">
+        <form action="app/so/tourl.php" method="post" onsubmit="return goSearch();">
+          <input type="text" id="soText" name="soText" class="soText" value="{html:searchword}" />
+        <input type="submit" value="站 内 搜 索" class="soSubmit" name="inStie" />
+        <input type="submit" value="全 网 搜 索" class="soSubmit" name="allSite"  />
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <div class="soBox rount_box">
+    <p class="filter"><strong>类型：</strong>{html:filter}</p>
+      <p class="count">总共为您搜索到<strong>{html:resc}</strong>条结果</p>
+      
+      <div class="soItem"> {html:search} </div>
+      <div class="page_box">{html:previouspage}<select onchange="javascript:window.location.href=(this.options[this.selectedIndex].value)">{html:pages}</select>{html:nextpage}</div>
+    </div>
+  </div>
+</div>
+</body></html>

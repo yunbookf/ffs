@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+<title>后台管理 FFS</title>
+<link type="text/css" href="glob/admin/style.css" rel="stylesheet" />
+<script type="text/javascript" src="glob/admin/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="glob/admin/admin.js" charset="utf8"></script>
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <h1><a href="admin.php"><img src="glob/admin/logo.jpg"  align="FFS" title="FFS" /></a></h1>
+    <div class="welcome">欢迎你，<strong>管理员</strong> <a href="?mode=admin&action=loginout">注销登录</a> <a href="index.php" target="_blank">网站首页</a> <a href="?mode=admin&action=dbUpdate">更新数据</a> <a href="?mode=admin&action=sitemapUpdate" title="请定期更新，对收录有益">更新网站地图</a></div>
+    <form action="?mode=admin&action=fileList" method="post" class="top_search">
+      <input type="text" name="data" value="请输入关键字 -.-" />
+      <input type="hidden" name="filter" value="searchword" />
+      <input type="submit" value="搜索" class="roundbtn" />
+    </form>
+    <div class="aboutffs">
+      <div class="aboutffs_text">
+        <p>Powered by <a href="http://www.fps88.com" target="_blank">FFS 5</a></p>
+        <p>官网：<a href="http://www.fps88.com" target="_blank">http://www.fps88.com</a></p>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+ 	 {body}
+    <div class="navEntrance">显示菜单
+      <ul class="navMain">
+		{admin:list}
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

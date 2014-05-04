@@ -1,0 +1,15 @@
+<style type="text/css">
+#extractBox{ width:520px; border:1px solid #ccc; margin:0 auto;  }
+#extractBox .close{ float:right; padding:3px;}
+#extractBox .extractBoxA{ padding-top:12px; height:41px; padding-left:134px;padding-left:126px\9; background:url(app/file/plus.jpg) no-repeat center center;  }
+#extractBox .extractBoxA  .input{ height:21px; line-height:21px; width:221px ; border:none; border:0; margin-top:5px;  float:left; background:none;padding-left:9px\9;+padding-left:0; _padding-left:0; }
+#extractBox .extractBoxA .submit{ height:30px; width:30px; float:left;  margin-left:10px; background:none; border:none; cursor:pointer;}
+</style>
+<div id="extractBox" class="round_box"> <a href="javascript:;" onclick="$('#extractBox').remove();" class="close">X</a>
+<form action="app/file/tourl.php" method="post">
+  <p class="extractBoxA">
+    <input name="files" type="text"  id="files" class="input"/>
+    <input type="submit" name="submit" class="submit" value="" /> </p>
+    </form>
+    <div id="plus_info">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文件提取应用可以让您使用文件分享码提取文件，在上方的输入框中输入文件分享码后，再点击右侧的（→）按钮，即可跳转到文件提取页，您可以在文件提取页查看该文件分享码所对应的文件详情，还能提取文件，并将文件分享给他人下载。</div>
+</div>

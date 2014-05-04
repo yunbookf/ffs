@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+ <title>tipsWindow 2.1 Demo By [Await]</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta http-equiv="Content-Language" content="zh-CN" />
+ <meta name="Keywords" content="" />
+ <meta name="Description" content="" />
+ <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+ <script type="text/javascript" src="../jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="flight_old.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function() {
+	$("#iframebutton").click(function(){
+		parent.$.XYTipsWindow.removeBox();
+	})
+ })
+ </script>
+ </head>
+<body>
+<div style="padding:0 20px;font-size:12px;color:#006600;text-align:left;">
+<pre>
+/*-----------------------------------------------------------------
+//Name:tipsWindow 2.1
+//Author:By Await
+//Date:2010-12-07
+//WebSite:http://leotheme.cn
+//-----------------------------------------------------------------
+options = $.extend({
+	___title: "Hello World",    //窗口标题文字
+	___content: "text:内容",    //内容{text|id|img|url|iframe}
+	___width: "300",            //窗口宽度
+	___height: "200",          //窗口离度
+	___titleClass: "boxTitle",	//窗口标题样式名称
+	___closeID:"",		//关闭窗口ID
+	___time:"",		    //自动关闭等待时间
+	___drag:"",		    //拖动手柄ID
+	___showbg:false,		//是否显示遮罩层
+	___offsets:{left:"auto",top:"auto"},//设定弹出层位置,默认居中
+	___fns:function(){}//关闭窗口后执行的函数
+},options);
+-------------------------------------------------------------------*/
+</pre>
+</div>
+<button id="iframebutton">关闭</button>
+</body>
+</html>

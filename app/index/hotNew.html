@@ -1,0 +1,16 @@
+<link type="text/css" href="{html:url}glob/css/global.css" rel="stylesheet" />
+<link type="text/css" href="{html:url}app/index/style.css" rel="stylesheet" />
+<div id="container">
+  <div id="header">
+    <h1 class="logo"><a href="{html:url}" title="FFS5"><img src="logo.gif" alt="FFS-Mini文件分享" title="FFS-Mini文件分享" /></a></h1>
+  </div>
+  <div id="content">
+    <div class="soBox rount_box">
+      <p><strong>{html:viewtype}</strong></p>
+      <br />
+      <div class="hotNewItem"> {html:hotNew} </div>
+      <div class="page_box">{html:previouspage}<select onchange="javascript:window.location.href=(this.options[this.selectedIndex].value)">{html:pages}</select>{html:nextpage}</div>
+    </div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,24 @@
+      <p id="result"> </p>
+       <form action="?mode=admin&action=downSet" method="post">
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="2">运行参数——下载参数设置</th>
+          </tr>
+        </thead>
+        <tr>
+          <td class="table_right"> 下载速度限制 ：</td>
+          <td><input type="text" name="FILE_DSP" value="{html:FILE_DSP}" title="下载速度限制" />
+            <span>(kb/s)</span></td>
+        </tr>
+        <tr>
+          <td class="table_right"> 下载链接限时 ：</td>
+          <td><input type="text" name="FILE_DMT" value="{html:FILE_DMT}" title="下载链接限时" />
+            <span>(S)</span></td>
+        </tr>
+        <tr>
+          <td class="table_right"></td>
+          <td><input type="submit" value="更新"  name="down_update" class="roundbtn" /></td>
+        </tr>
+              </table>
+    </form>

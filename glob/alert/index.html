@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+ <title>XYTipsWindow 2.8 Demo By [Await]</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta http-equiv="Content-Language" content="zh-CN" />
+ <meta name="Keywords" content="" />
+ <meta name="Description" content="" />
+ <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+ <script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+ <script type="text/javascript" src="jquery.XYTipsWindow.min.2.8.js"></script>
+ <style type="text/css">
+	 body {
+		font: 12px 'Microsoft Yahei',arial,SimSun,sans-serif;
+		margin: 0 auto;
+		padding: 0px;
+		text-align: center;
+		color: #555;
+		background-color: #fff;
+	}
+	h1,h2,h3,h4,h5,h6,div,p,ul,ol,dl,dd,dt,abbr,form,input,img { margin: 0; padding: 0; }
+	img { border: none; display:block; }
+
+	h1 { width: 100%; text-align: center;}
+	button,#close{width:80px;height:35px;background:url(ico.png) 0 -30px no-repeat;border:none;color:#666;}
+
+	a { color: #096FB7; text-decoration: none; }
+	a:hover { text-decoration: underline; }
+
+	#container { margin: 0 auto; margin-top: 20px; padding: 20px; width: 600px; text-align: left; border: 20px solid #60B7DE; }
+	h3{ margin: 10px 0;}
+	ul li { list-style: none; margin: 10px 0 50px 50px; }
+	ul li span{font-size:14px;font-weight:bold;color:#1B739E;}
+	div.update li {list-style: none; padding-left: 30px; color: #fc0;}
+	blockquote { width: 500px; margin: 10px 0; padding: 10px; border: 2px dashed #73C5E5; background-color: #eff;}
+	.lh25{line-height:25px;}.blue3{color:#1B739E;}
+ </style>
+
+ <script type="text/javascript">
+ $(document).ready(function() {
+	$("#test1_0").click(function(){
+		jQuery.XYTipsWindow();
+	});
+	$("#test1_1").click(function(){
+		$.XYTipsWindow({
+			___title:"左上角",
+			___offsets:"left-top"
+		});
+	});
+	$("#test1_2").click(function(){
+		$.XYTipsWindow({
+			___title:"右上角",
+			___offsets:"right-top"
+		});
+	});
+	$("#test1_3").click(function(){
+		$.XYTipsWindow({
+			___title:"左下角",
+			___offsets:"left-bottom"
+		});
+	});
+	$("#test1_4").click(function(){
+		$.XYTipsWindow({
+			___title:"右下角",
+			___offsets:"right-bottom"
+		});
+	});
+	$("#test1_5").click(function(){
+		$.XYTipsWindow({
+			___title:"靠左居中",
+			___offsets:"left-middle"
+		});
+	});
+	$("#test1_6").click(function(){
+		$.XYTipsWindow({
+			___title:"靠右居中",
+			___offsets:"right-middle"
+		});
+	});
+	$("#test1_7").click(function(){
+		$.XYTipsWindow({
+			___title:"居中置顶",
+			___offsets:"middle-top"
+		});
+	});
+	$("#test1_8").click(function(){
+		$.XYTipsWindow({
+			___title:"居中置底",
+			___offsets:"middle-bottom"
+		});
+	});
+	$("#test1_9").click(function(){
+		$.XYTipsWindow({
+			___title:"自定义位置",
+			___offsets:{left:"100px",top:"100px"}
+		});
+	});
+	//END
+	$("#test2_0").click(function(){
+		$.XYTipsWindow({
+			___title:"无边框无标题",
+			___showTitle:false,
+			___showBoxbg:false,
+			___closeID:"wubiaoti",
+			___content:"text:<p>这是一个没有标题的纯内容弹出层</p><button id='wubiaoti'>关闭</button>"
+		});
+	});
+	$("#test2_1").click(function(){
+		$.XYTipsWindow({
+			___title:"边框透明",
+			___boxBdColor:"#666",
+			___boxBdOpacity:"0.5",
+			___boxWrapBdColor:"#ABABAB"
+		});
+	});
+	$("#test2_2").click(function(){
+		$.XYTipsWindow({
+			___title:"对话框",
+			___content:"text:<div style='width:200px;text-align:left;padding:5px 15px;line-height:25px;'>这是一个Arert对话框,点击确定后将返回弹出层里的文字</div>",
+			___width:"300",
+			___height:"100",
+			___drag:"___boxTitle",
+			___button:["确定"],
+		   ___callback:function(){
+				var TESTtext = $(".___boxContent",$("#"+$.XYTipsWindow.getID())).text();
+				alert(TESTtext);
+			}
+		});
+	});
+	$("#test2_3").click(function(){
+		$.XYTipsWindow({
+			___title:"对话框",
+			___content:"text:这是一个confirm对话框。",
+			___width:"300",
+			___height:"100",
+			___button:["确定","取消"],
+		    ___callback:function(val){
+				alert(val);
+			}
+		});
+	});
+	$("#test2_4").click(function(){
+		$.XYTipsWindow({
+			___title:"载入提示",
+			___content:"text:页面载入中...",
+			___width:"100",
+			___height:"40",
+			___showTitle:false,
+			___showBoxbg:false,
+			___showbg:true,
+			___windowBgColor:"#ffffff",
+			___windowBgOpacity:"0.5",
+			___time:3000,
+			___fns:function(){
+				$("#"+$.XYTipsWindow.getID()).find(".___boxContent").css({border:"none"}).addClass("loadinglayer");
+			}
+		});
+	});
+	$("#test2_5").click(function(){
+		$.XYTipsWindow({
+			___title:"Tips效果",
+			___content:"text:<p style='margin:1px;padding:8px;background:#FFF9DF'>心已伤，乃稍变。<br />志未灭，气犹存！<br />他朝金鳞跃龙门！</p>",
+			___width:"150",
+			___height:"78",
+			___showTitle:false,
+			___showBoxbg:false,
+			___boxWrapBdColor:"#FDB838",
+			___triggerID:"test2_5",
+			___closeID:"colseTipsLayer",
+			___offsets:{left:"90px",top:"0px"},
+			___time:5000,
+			___fns:function(){
+					$("body").append("<span class=\"arrowLeft\" style=\"left:-7px;top:15px;\">箭头</span><em class=\"colseBtn\" id=\"colseTipsLayer\">关闭</em>");
+					$(".arrowLeft,#colseTipsLayer").appendTo("#"+$.XYTipsWindow.getID());
+					$("#"+$.XYTipsWindow.getID()).find(".___boxContent").css({background:"#FFFFFF"}).addClass("tipslayer");
+			}
+		});
+	});
+	$("#test2_6").click(function(){
+		$.XYTipsWindow({
+			___title:"吸附模式",
+			___triggerID:"test2_6",
+			___content:"text:我的位置是相对于被点击元素定义的",
+			___offsets:{left:"80px",top:"0px"}
+		});
+	});
+	$("#test2_7").click(function(){
+		$.XYTipsWindow({
+			___title:"右下角弹出",
+			___offsets:{right:"0px",bottom:"-300px"},
+			___fns:function(){
+				$("#"+$.XYTipsWindow.getID()).parent().animate({"bottom": "0px"},500);
+			}
+		});
+	});
+	$("#test2_8").click(function(){
+		$.XYTipsWindow({
+			___title:"可拖动层",
+			___drag:"___boxTitle"
+		});
+	});
+	$("#test2_9").click(function(){
+		$.XYTipsWindow({
+			___title:"自动关闭",
+			___content:"text:2秒后我会自动关闭",
+			___time:"2000"
+		});
+	});
+	//END
+	$("#test2").click(function(){
+		$.XYTipsWindow({
+			___title:"Hello world",
+			___content:"text:提示信息内容",
+			___showbg:true,
+			___drag:"___boxTitle"
+		});
+	});
+	$("#test3").click(function(){
+		$.XYTipsWindow({
+			___title:"我是页面中的一个ID",
+			___content:"id:testID",
+			___showbg:true,
+			___drag:"___boxTitle"
+		})
+	});
+	$("#test4").click(function(){
+		$.XYTipsWindow({
+			___title:"我是一张图片",
+			___content:"img:http://leotheme.cn/wp-content/uploads/2008/09/tr2xcp6yw4o5xebj9s.jpg",
+			___width:"500",
+			___height:"230",
+			___drag:"___boxTitle",
+			___showbg:true
+		});
+	});
+	$("#test5").click(function(){
+		$.XYTipsWindow({
+			___title:"视频FLASH演示",
+			___content:"swf:http://player.youku.com/player.php/sid/XMjM5NTM1NDk2/v.swf",
+			___width:"500",
+			___height:"400",
+			___drag:"___boxTitle"
+		});
+	});
+	$("#test6").click(function(){
+		$.XYTipsWindow({
+			___title:"我是测试文件",
+			___content:"url:get?test.html",
+			___width:"400",
+			___height:"200",
+			___drag:"___boxTitle",
+			___showbg:true
+		});
+	});
+	$("#test7").click(function(){
+		$.XYTipsWindow({
+			___title:"框架应用",
+			___content:"iframe:http://www.baidu.com",
+			___width:"800",
+			___height:"450"
+		});
+	});
+	$("#uid").click(function(){
+		$.XYTipsWindow({
+			___boxID:"uidtest",
+			___content:"text:ID测试",
+			___width:"240",
+			___height:"150",
+			___offsets:"middle-bottom"
+		});
+	})
+
+ })
+ </script>
+</head>
+
+<body>
+<div id="container">
+  <h1>XYTipsWindow 2.8</h1>
+  <h3 id="uid">关于插件：</h3>
+  <p class="lh25">一个基于jQuery的弹出层。最新版本2.7;<br />
+  支持拖拽，支持多窗口。内容为文字，ID，图片，SWF，URL，框架；<br />
+  这个插件前前后后修改了几个月了。一直在改进；到现在差不多了。以后不会经常更新了；
+  </p>
+  <div class="update">
+  <h3>更新：(2011-05-16)</h3>
+  <p class="lh25 blue3">
+更新了一下，IE6之前的报错已经修复。然后增强了随机ID的生成时的防重复；
+然后新增了一个获取当前弹出层ID的方法[$.XYTipsWindow.getID()]。；
+ </p>
+  </div>
+
+  <h3>应用演示：</h3>
+    <ul>
+		<li>
+			<span>兼容性测试元素：</span> <br /><br />
+			下拉框：
+			<select name="leothemem" id="leotheme">
+				<option value="0" selected="selected">http://leotheme.cn/
+				<option value="1">http://www.wopus.org/
+			</select><br /><br />
+			输入框：
+			<input type="text" /><br /><br />
+			链接：
+			<a href="#" title="">默认</a>
+			<br />
+		</li>
+		<li>
+		<span>弹出普通文本信息提示以及位置演示：</span> <br />
+		<blockquote>
+<pre>
+$("#ID").click(function(){
+	$.XYTipsWindow();//默认
+	$.XYTipsWindow({___offsets:"left-top"});//左上角
+	$.XYTipsWindow({___offsets:"right-top"});//右上角
+	$.XYTipsWindow({___offsets:"left-bottom"});//左下角
+	$.XYTipsWindow({___offsets:"right-bottom"});//右下角
+	$.XYTipsWindow({___offsets:"left-middle"});//靠左居中
+	$.XYTipsWindow({___offsets:"right-middle"});//靠右居中
+	$.XYTipsWindow({___offsets:"middle-top"});//居中置顶
+	$.XYTipsWindow({___offsets:"middle-bottom"});//居中置底
+	$.XYTipsWindow({___offsets:{left:"100px",top:"100px"}});//自定义
+});</pre>
+		</blockquote>
+			<button id="test1_0">不带参数</button>
+			<button id="test1_1">左上角</button>
+			<button id="test1_2">右上角</button>
+			<button id="test1_3">左下角</button>
+			<button id="test1_4">右下角</button>
+			<button id="test1_5">靠左居中</button>
+			<button id="test1_6">靠右居中</button>
+			<button id="test1_7">居中置顶</button>
+			<button id="test1_8">居中置底</button>
+			<button id="test1_9">自定位置</button>
+		</li>
+		<li>
+			<span>其他特殊应用演示：</span> <br />
+					<blockquote>
+<pre>
+$("#ID").click(function(){
+	$.XYTipsWindow();//默认
+	//这部分大家直接查看源文件吧
+});</pre>
+		</blockquote>
+			<button id="test2_0">无边框</button>
+			<button id="test2_1">透明边框</button>
+			<button id="test2_2">alert</button>
+			<button id="test2_3">confirm</button>
+			<button id="test2_4">载入提示</button>
+			<button id="test2_5">普通TIPS</button>
+			<button id="test2_6">吸附模式</button>
+			<button id="test2_7">右下弹出</button>
+			<button id="test2_8">可拖动</button>
+			<button id="test2_9">自动关闭</button>
+			<div id="info"></div>
+		</li>
+		<li>
+		<span>弹出一个普通的信息提示（可拖动，遮罩层）：</span> <br />
+
+		<blockquote>
+<pre>
+$("#test2").click(function(){
+	$(this).XYTipsWindow({
+		___title:"Hello world",
+		___content:"text:提示信息内容",
+		___width:"300",
+		___height:"200",
+		___dray:"___boxTitle",
+		___showbg:true
+	});
+});</pre>
+		</blockquote>
+
+		<button id="test2">点击测试</button>
+		</li>
+
+		<li>
+		<span>弹出页面中的某个ID（可拖动，遮罩层）：</span> <br />
+		<blockquote>
+<pre>
+$.XYTipsWindow({
+	___title:"弹出页面中的某个ID",
+	___content:"id:testID",
+	___showbg:true,
+	___drag:"___boxTitle"
+});</pre>
+		</blockquote>
+
+		<button id="test3">点击测试</button>
+		<div id="testID" style="display:none ">
+			<p class="lh25">我是测试ID里的内容 <br />
+			我换行了...<br /></p>
+			<br />
+		</div>
+
+		</li>
+
+		<li>
+		<span>弹出一张图片（可拖动，遮罩层）： </span><br />
+		<blockquote>
+<pre>
+$("#test4").click(function(){
+	$(this).XYTipsWindow({
+		___title:"Hello world",
+		___content:"img:图片路径",
+		___width:"500",
+		___height:"250",
+		___drag:"___boxTitle",
+		___showbg:true
+	});
+});</pre>
+		</blockquote>
+
+		<button id="test4">点击测试</button>
+		</li>
+
+		<li>
+		<span>弹出一个视频或FLASH动画（可拖动）： </span><br />
+		<blockquote>
+<pre>
+$("#test4").click(function(){
+	$(this).XYTipsWindow({
+		___title:"Hello world",
+		___content:"swf:路径",
+		___width:"225",
+		___height:"185",
+		___drag:"___boxTitle"
+	});
+});</pre>
+		</blockquote>
+
+		<button id="test5">点击测试</button>
+		</li>
+
+		<li>
+		<span>加载一个文件（也可以是.php/.asp?id=4之类的,可拖动，遮罩层）： </span><br />
+		<blockquote>
+<pre>
+$("#test5").click(function(){
+	$(this).XYTipsWindow({
+		___title:"Hello world",
+		___content:"url:get?test.html",
+		___width:"400",
+		___height:"200",
+		___drag:"___boxTitle",
+		___showbg:true
+	});
+});</pre>
+		</blockquote>
+
+		<button id="test6">点击测试</button>
+		</li>
+
+		<li>
+		<span>加载一个网页到框架里（可拖动，遮罩层）： </span><br />
+		<blockquote>
+<pre>
+$("#test6").click(function(){
+	$(this).XYTipsWindow({
+		___title:"框架应用",
+		___content:"iframe:http://leotheme.cn",
+		___width:"900",
+		___height:"500",
+		___drag:"___boxTitle",
+		___showbg:true
+	});
+});</pre>
+		</blockquote>
+
+		<button id="test7">点击测试</button>
+		</li>
+
+  </ul>
+
+  <h3>相关下载：</h3>
+  <p><a href="http://leotheme.cn/wp-content/uploads/Example/js/tipswindow/jquery.XYTipsWindow.2.8.js" title="JS文件下载">JS文件下载</a> | <a href="http://leotheme.cn/wp-content/uploads/Example/js/tipswindow/XY_Tips.rar" title="完整包下载">完整包下载</a></p>
+
+  <p style="float: right;">最后更新日期：星期四 2011年5月16日 By <a href="http://leotheme.cn/" title="Await">Await</a> <a href="#" title="返回顶部">返回顶部</a><br /></p>
+  <p style="clear: both;"></p>
+
+</div>
+<br />
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+
+<p id="result"> </p>
+<form action="?mode=pic&action=index" method="post">
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="3">图片外链设置</th>
+      </tr>
+    </thead>
+    <tr>
+      <td class="table_right">外链图片大小限制 ：</td>
+      <td style="width:50%;"><input type="text" name="PIC_LIT" value="{html:PIC_LIT}"  title="MB" /></td>
+      <td><span>（MB）</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 下载链接有效限时 ：</td>
+      <td><input type="text" name="PIC_DMT" value="{html:PIC_DMT}" title="天" /></td>
+      <td><span>（天）</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 链接倒计时 ：</td>
+      <td><input type="text" name="LINK_COUNTDOWN" value="{html:LINK_COUNTDOWN}" title="下载链接显示倒计时" /></td>
+      <td><span>（秒）</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 本站图片加载速度 ：</td>
+      <td><input type="text" name="PIC_DSP" value="{html:PIC_DSP}" title="KB" /></td>
+      <td><span>（KB/秒）</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 外链图片加载速度 ：</td>
+      <td><input type="text" name="PIC_DSP_LINK" value="{html:PIC_DSP_LINK}" title="KB" /></td>
+      <td><span>（KB/秒）</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 外链图片每月流量 ：</td>
+      <td><input type="text" name="PIC_F_EXPIRED" value="{html:PIC_F_EXPIRED}" title="MB" /></td>
+      <td><span>（MB）</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 广告设置 ：</td>
+      <td><textarea name="P_AD" title="广告代码">{html:P_AD}</textarea></td>
+      <td><span>宽度最大为734px</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"></td>
+      <td><input type="submit" value="更新"  name="pic_update" class="roundbtn" /></td>
+      <td></td>
+    </tr>
+  </table>
+</form>

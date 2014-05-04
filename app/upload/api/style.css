@@ -1,0 +1,24 @@
+body{ background:#fff;}
+#file_upload_box { background:#fff; border:3px solid #f1f1f1; width:500px; }
+#upload_load_box { width:490px; padding:5px; }
+#upload_main_box { border: 1px dashed #C2D5E3;background: #E5EDF2; padding:2px; text-align:center; }
+#upload_info {}
+#upload_uploader {height: 23px; width: 48px; overflow:hidden; margin:0 auto; padding-bottom:5px;}
+.upload_progress_bar { height: 5px; width: 0%; background-color: #0CF; }
+.upload_progress_box { height: 5px; width: 450px; border: 1px solid #06F; margin-right: auto; margin-left: auto; margin-top: 2px; margin-bottom: 2px; }
+.upload_team_class { height: auto; width: 485px; margin-top: 2px; margin-right: auto; margin-bottom: 2px; margin-left: auto; border: 3px solid #E5E5E5; background-color: #E6E6E6; font-family: Verdana, Geneva, sans-serif; font-size: 14px; text-align: center; -moz-border-radius:5px; -khtml-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-sizing:content-box; -webkit-box-sizing:content-box; -khtml-box-sizing:content-box; box-sizing:content-box; }
+.upload_team_complete { height: auto; width: 482px; border: 2px outset #f1f1f1; }
+.upload_team_complete object { position:relative; top:5px; }
+.upload_team_complete form{ display:inline;}
+.upload_box_cancel { float: right; }
+p{ color:#fff;}
+p a{ color:#fff;}
+
+
+#file_email{ height:auto; width:600px; margin-left:auto; margin-right: auto; text-align:center;border:2px solid #f1f1f1; ;zoom:1;}
+#file_email:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
+#file_email_input{  height:25px; float:left; padding-left:70px;}
+#file_email_input input{width:300px; height:15px; padding:4px; border:1px solid #d9d9d9; border-top-color:#c0c0c0; font-size:14px; margin-top:2px;}
+#file_email_btn{float: left; height: 30px; width: 160px; margin-top: 2px; margin-right: 2px; margin-bottom: 2px;}
+#file_email_info{width:auto; background-color:#06C; color:#FFF;}
+.upload_team_complete .quickLink{ font-size:12px; color:#090; text-align:center; display:block;}

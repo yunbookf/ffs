@@ -1,0 +1,29 @@
+<link type="text/css" href="{html:url}glob/css/global.css" rel="stylesheet" />
+<link type="text/css" href="{html:url}app/index/style.css" rel="stylesheet" />
+<script type="text/javascript" src="{html:url}app/index/load.js"></script>
+
+<div id="container">
+  <div id="header">
+    <h1 class="logo"><a href="{html:url}" title="{html:title}"><img src="logo.gif" alt="{html:title}" title="{html:title}" /></a></h1>
+  </div>
+  <div id="content">
+    <div class="wpslider  round_box">
+      <ul class="site_show" id="slider">
+        {html:INDEX_INFO}
+      </ul>
+    </div>
+    <script type="text/javascript">
+new slider({id:'slider'})
+</script>
+<div class="indexAd">{html:INDEX_AD}</div>
+    <div id="plus_window" class="plus round_box" >
+      <div id="plus_in">
+      <div class="plus_inner_box"><div class="plus_inner">
+      {html:ico}</div></div>
+      </div>
+    </div>
+    <div class="plus_box round_box" id="plus_box" style="display:none"> </div>
+    {html:hotAndNew}
+  </div>
+  {html:INDEX_FRIENDLINK}
+</div>

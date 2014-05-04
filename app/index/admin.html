@@ -1,0 +1,56 @@
+
+<p id="result"> </p>
+<form action="?mode=admin&action=indexSet" method="post">
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="3">网站首页设置</th>
+      </tr>
+    </thead>
+    <tr>
+      <td class="table_right"> 广告设置 ：</td>
+      <td style="width:50%;"><textarea name="INDEX_AD" title="广告代码">{html:INDEX_AD}</textarea></td>
+      <td><span>（宽度最大为762px）</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 滚动信息 ：</td>
+      <td><textarea name="INDEX_INFO" >{html:INDEX_INFO}</textarea></td>
+      <td><span>(每条信息请用&lt;li&gt; &lt;/li&gt;标签包围)</span></td>
+    </tr>
+    <thead>
+      <tr>
+        <th colspan="3">首页热门及最新设置</th>
+      </tr>
+    </thead>
+    <tr>
+      <td class="table_right"> 自动更新开关 ：</td>
+      <td><input type="text" name="INDEX_UPDATE" value="{html:INDEX_UPDATE}" title="数据自动更新" /></td>
+      <td><span>（打开请设置为1,关闭请设置为0.）</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 记录刷新条数 ：</td>
+      <td><input type="text" name="INDEX_UPDATE_NUMS" value="{html:INDEX_UPDATE_NUMS}" title="记录刷新条数" /></td>
+      <td><span>（条）</span></td>
+    </tr>
+        <thead>
+      <tr>
+        <th colspan="3">友情链接设置</th>
+      </tr>
+    </thead>
+        <tr>
+      <td class="table_right"> 是否显示友情链接 ：</td>
+      <td><input type="text" name="INDEX_FRIENDLINK_TURN" value="{html:INDEX_FRIENDLINK_TURN}" title="是否显示有情链接" /></td>
+      <td><span>（显示请填入链接标题,不显示请留空.）</span></td>
+    </tr>
+            <tr>
+      <td class="table_right"> 友情链接列表 ：</td>
+      <td><textarea name="INDEX_FRIENDLINK">{html:INDEX_FRIENDLINK}</textarea></td>
+      <td><span>（格式：链接标题|链接地址，每行为一个友情链接）</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"></td>
+      <td><input type="submit" value="更新"  name="index_update" class="roundbtn" /></td>
+      <td></td>
+    </tr>
+  </table>
+</form>

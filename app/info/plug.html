@@ -1,0 +1,24 @@
+<style type="text/css">
+#info_edit { margin:0 auto; width: 320px; border: 2px double #f1f1f1; }
+#info_show { font-weight:bold; line-height:20px; height: 20px; border-bottom: 2px solid #f1f1f1; text-align: center; }
+#info_box { text-align: center; margin-top: 10px; margin-right: 10px; margin-left: 10px; margin-bottom: 10px; }
+#info_us,#info_pw { width:144px; }
+#info_input{ width:295px;}
+</style>
+<div id="info_edit" class="round_box">
+  <div id="info_show">修改文件信息--请登陆文件</div>
+  <div id="info_box">
+  <form action="?/file/edit-file.html" method="post" target="_blank" id="fileEditForm">
+    <p>
+      <label for="info_us">分享码</label>
+      <input type="text" name="info_us" id="info_us" />
+    </p>
+    <p>
+      <label for="info_pw">管理码</label>
+      <input type="password" name="info_pw" id="info_pw" />
+    </p>
+ </form>
+    <p><a href="javascript:;" onclick="document.getElementById('fileEditForm').submit();" class="btn_class round_btn">登陆文件</a></p>
+  </div>
+</div>
+ 

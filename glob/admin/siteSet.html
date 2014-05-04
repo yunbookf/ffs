@@ -1,0 +1,106 @@
+
+<p id="result"> </p>
+<form action="?mode=admin&action=siteSet" method="post">
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="3">网站基本信息</th>
+      </tr>
+    </thead>
+    <tr>
+      <td class="table_right">站点名称：</td>
+      <td style="width:50%;"><input type="text" name="SITE_NAM" value="{html:title}"  title="填写站点名称" /></td>
+      <td><span>填写站点名称 (以下所有请不要输入特殊字符，尤其是单引号)</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 站点关键字 ：</td>
+      <td><input type="text" name="SITE_KEY" value="{html:keywords}" title="填写站点关键字" /></td>
+      <td><span>填写站点关键字</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 站点描述 ：</td>
+      <td><input type="text" name="SITE_DES" value="{html:des}" title="填写站点描述" /></td>
+      <td><span>填写站点描述</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 数据目录 ：</td>
+      <td><input type="text" name="SAVE_DIR" value="{site:save}" title="填写数据存放目录" /></td>
+      <td><span>填写数据存放目录</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 调试模式 ：</td>
+      <td><input type="text" name="DEBUG" value="{site:DEBUG}" title="填写调试模式" /></td>
+      <td><span>0为开启，1为关闭。正常运行请不要开启。</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 加入FFS搜索引擎 ：</td>
+      <td><input type="text" name="FORSEARCH" value="{site:FORSEARCH}" title="加入FFS搜索引擎，增加搜索率" /></td>
+      <td><span>0为不允许，1为允许。<img src="{site:FORSEARCHURL}" style="display:none;" /> <a href="http://so.fps88.com" target="_blank">FFS搜索</a></span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 虚拟数据更新周期 ：</td>
+      <td><input type="text" name="TASK_RUNTIME" value="{site:TASK_RUNTIME}" title="填写更新周期（S）" /></td>
+      <td><span>秒，虚拟数据库的更新周期</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 站点地图更新周期 ：</td>
+      <td><input type="text" name="SITEMAP_RUNTIME" value="{site:SITEMAP_RUNTIME}" title="填写站点地图更新周期（小时）" /></td>
+      <td><span>小时， {site:sitemap}</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 字体文件链接 ：</td>
+      <td><input type="text" name="FONTFILE" value="{site:FONTFILE}" title="填写字体文件链接" /></td>
+      <td><span>默认不必添加。如果文件信息生成图片文字无法显示，请自行添加字体的绝对路径。linux请使用类似于/home/a.txt的方式填写</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 上传屏蔽关键词 ：</td>
+      <td><input type="text" name="SHIELDWORD" value="{site:SHIELDWORD}" title="填写屏蔽关键词，即不允许上传的文件名称" /></td>
+      <td><span>多个用逗号(, 英文状态下逗号)分开</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 下载文件名广告前缀设置 ：</td>
+      <td><input type="text" name="PREFIX_AD" value="{site:PREFIX_AD}" title="下载文件名广告前缀设置" /></td>
+      <td><span>下载时文件名会加入广告前缀</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 站点备案号 ：</td>
+      <td><input type="text" name="SITE_ICP" value="{html:icp}" title="填写站点备案号" /></td>
+      <td><span>填写站点备案号</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 站长联系QQ ：</td>
+      <td><input type="text" name="SITE_QQ" value="{html:qq}" title="填写站长联系QQ" /></td>
+      <td><span>填写站长联系QQ</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 站长Email ：</td>
+      <td><input type="text" name="SITE_EMAIL" value="{html:email}" title="填写站长Email"/></td>
+      <td><span>填写站长Email</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 站长联系电话 ：</td>
+      <td><input type="text" name="SITE_TEL" value="{html:tel}" title="站长联系电话" /></td>
+      <td><span>站长联系电话</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 全站统计代码 ：</td>
+      <td><textarea name="SITE_TONGJI" title="全站统计代码">{html:tongji}</textarea></td>
+      <td><span>全站统计代码</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 站点是否关闭 ：</td>
+      <td><input type="text" name="SITE_CLOSE" value="{site:SITE_CLOSE}" title="站点是否关闭" /></td>
+      <td><span>1为正常运行，0为关闭站点</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 站点关闭原因 ：</td>
+      <td><textarea name="SITE_CLOSE_REASON" title="站点关闭原因">{site:SITE_CLOSE_REASON}</textarea></td>
+      <td><span>站点关闭原因</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"></td>
+      <td><input type="submit" value="更新"  name="site_update" class="roundbtn" /></td>
+      <td></td>
+    </tr>
+  </table>
+</form>

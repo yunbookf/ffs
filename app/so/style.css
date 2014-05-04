@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+.soBar{ width:490px; margin:0 auto; padding-bottom:10px; background:url(btnBg.gif) no-repeat right top;}
+.soBar .soText{ width:300px; height:19px; padding:4px; border:1px solid #d9d9d9; border-top-color:#c0c0c0; font-size:14px;}
+.soBar .soText:focus{ border-color:#409dfe;}
+.soBar .soSubmit{ width:85px; height:29px; border:none; border:0; background: none; cursor:pointer; font-weight:bold; color:#666; line-height:25px;}
+.soBar .soSubmit:hover{ color:#444;}
+.soBox { border:1px solid #f1f1f1; padding:10px; }
+.soBox .count{ margin-bottom:20px;}
+.soItem .filename{height:30px; background:#e7f3ff; text-align:left; line-height:30px; font-weight:bold; padding-left:5px; font-size:16px; }
+.soItem .filename a{color:#36C;}
+.soItem .filename a span{ color:#F00;}
+.soItem .fileinfo{ border:none; padding:0;}
+.soItem .discription{ color:#000; margin-bottom:15px;}
+/*分页部分*/
+.page_box{ background:#F7F7F7;padding:8px; border:1px solid #CBDAEA; margin-top:40px;zoom:1;}
+.page_box:after{ content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.files_form  .submit_del{ width:80px; height:20px; cursor:pointer; background:#6CF; border:1px solid #FF9; float:left; margin-right:30px;}
+.files_form  .submit_del:hover{ font-weight:bold;}
+.total_page{ float:left;}
+.page_box a{ display:inline-block;height:22px; padding:0 8px;color:#2B4A78; border:1px solid #d6d6d6; line-height:22px; margin:2px 4px;}
+.page_box strong{ height:22px; padding:0 8px; border:1px solid #f7f7f7; float:left; line-height:22px; margin:0 4px;}
+.page_box a:hover{ color:#fff; text-decoration:none; background:#73B2DA; border-color:#3090BC;}

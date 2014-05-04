@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>文件分享</title>
+</head>
+
+<body>
+<script language="javascript" type="text/javascript" src="glob/res/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="app/upload/api/system.js"></script>
+<script language="javascript" type="text/javascript" src="app/upload/api/juq2.js"></script>
+<link type="text/css" href="glob/css/global.css" rel="stylesheet" />
+<link type="text/css" href="app/upload/api/style.css" rel="stylesheet" />
+<script type="text/javascript">
+function loading(){
+	var email = "";
+	var jumpEmail = 'yes';
+	var session = GetCookie('PHPSESSID');
+	$('#file_email').delay(500).slideUp(800);
+	 $.get('index.php?/upload/config',function(a){
+	  $('#file_upload').uploadify({
+		  'sizeLimit' :a.upsize,
+          'auto'      : true,
+	      'removeCompleted' : false,
+		  'multi'          : true,
+		  'fileExt'   :a.uptype,
+		  'fileDesc'    : 'Select Files',
+	      'queueSizeLimit' : a.upmax,
+		  'buttonImg'   : 'app/upload/api/upApiBtn.png',
+		  'scriptData'  : {'email':email,'jumpEmail':jumpEmail,'PHPSESSION':session}
+      });
+  },'json');
+}
+loading();
+function copySuccess(){
+	alert("复制成功！");
+}
+
+</script>
+<div id="file_upload_box">
+<div id="file_upload"></div>
+</div>
+</body>
+</html>

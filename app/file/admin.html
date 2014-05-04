@@ -1,0 +1,72 @@
+
+<p id="result"> </p>
+<form action="?mode=file&action=index" method="post">
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="3">运行参数——下载参数设置</th>
+      </tr>
+    </thead>
+    <tr>
+      <td class="table_right"> 下载速度限制 ：</td>
+      <td style="width:50%;"><input type="text" name="FILE_DSP" value="{html:FILE_DSP}" title="下载速度限制" /></td>
+      <td><span>（KB/S）<br  /> <strong style="color:red;">不限制则设置为0 </strong></span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 下载链接限时 ：</td>
+      <td><input type="text" name="FILE_DMT" value="{html:FILE_DMT}" title="下载链接限时" /></td>
+      <td><span>（天）</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 链接倒计时 ：</td>
+      <td><input type="text" name="F_LINK_COUNTDOWN" value="{html:F_LINK_COUNTDOWN}" title="下载链接显示倒计时" /></td>
+      <td><span>（秒）</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 广告设置 ：</td>
+      <td><textarea name="F_AD" title="广告代码">{html:F_AD}</textarea></td>
+      <td><span>宽度最大为734px</span></td>
+    </tr>
+    <thead>
+      <tr>
+        <th colspan="3">运行参数——多节点设置</th>
+      </tr>
+    </thead>
+        <tr>
+      <td class="table_right"> 是否启用本站下载链接 ：</td>
+      <td><input type="text" name="SITEDOWN_TURN" value="{html:SITEDOWN_TURN}" title="是否启用本站下载链接" /></td>
+      <td><span>1为启用，0为不启用</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 节点列表 ：</td>
+      <td><textarea name="LDN" title="节点列表">{html:LDN}</textarea></td>
+      <td><span>格式：节点名称|节点地址或IP|节点数据目录，每个节点为一行</span><br />同步配置前请关闭网站自带防火墙(firewall)<br />
+      <a href="http://bbs.fps88.com/thread-755-1-1.html" target="_blank" title="不懂配置，点此查看">不懂配置？点此查看</a>
+      </td>
+    </tr>
+    <tr><td></td><td><input type="submit" value="同步节点配置及测试"  name="try_ldn" class="roundbtn" /></td><td></td></tr>
+        <thead>
+      <tr>
+        <th colspan="3">下载参数——黑白名单设置</th>
+      </tr>
+    </thead>
+        <tr>
+      <td class="table_right"> 启用黑/白名单 ：</td>
+      <td><input type="radio" name="SITELIST_BAN" value="0" id="SITELIST_BANA" {html:SITELIST_BANA} /> <label for="SITELIST_BANA">启动白名单</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="SITELIST_BAN" value="1" id="SITELIST_BANB" {html:SITELIST_BANB} /> <label for="SITELIST_BANB">启动黑名单</label> </td>
+      <td><span></span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 域名列表 ：</td>
+      <td><textarea name="SITEBAN_LIST" title="节点列表">{html:SITEBAN_LIST}</textarea></td>
+      <td><span>列表为空时将不会启用名单制度，默认允许所有网站外链。<br />
+      每行为一个域名(不需要带http://)<br />启用白名单时，只有此列表内的域名允许直接外链本站文件（请添加本站域名和子节点域名）。<br />启动黑名单时，列表内所有域名不能直接外链本站文件
+      </span>
+      </td>
+    </tr>
+    <tr>
+      <td class="table_right"></td>
+      <td><input type="submit" value="更新"  name="down_update" class="roundbtn" /> </td>
+      <td></td>
+    </tr>
+  </table>
+</form>

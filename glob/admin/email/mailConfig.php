@@ -1,0 +1,11 @@
+<?php 
+define('MAILWAY','sendmail'); 
+define('SMTPSERVER','smtp.exmail.qq.com'); 
+define('SMTPSERVERPORT','25'); 
+define('SMTPUSERMAIL','admin@fps88.com'); 
+define('SMTPUSER','admin@fps88.com'); 
+define('SMTPPASS',''); 
+define('MAILSUBJECT','文件上传成功，MAILSUBJECT'); 
+define('MAILTYPE','HTML'); 
+define('MAILBODY','MAILBODY'); 
+ ?>

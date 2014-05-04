@@ -1,0 +1,53 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.musicBox { border:1px solid #f1f1f1; padding:10px; background:url(music.gif) no-repeat  100px 30px; }
+musicInfBox{ }
+.musicInf{ width:370px; margin-left:369px; border-left:1px solid #f1f1f1;}
+.musicAbout{ border:1px solid #f1f1f1; border-left:none; border-right:none;}
+.musicInf p{ padding-left:30px;}
+.musicLink a{ color:#06C;}
+.musicTip{ margin:5px;border:1px solid #f1f1f1; padding:5px; }
+.musicLink object { position:relative; top:8px;}
+.musicLink img { position:relative; top:8px;}
+.musicBox .line{border-bottom:1px solid #f1f1f1; height:1px; margin:5px 0; overflow:hidden; clear:both;}
+.musicBox h2 { font-weight:bold; }
+.infoContent{word-break:break-all;}
+.infoContent a{ color:#06C;}
+.infoContent a:hover{ text-decoration:underline;}
+#jiathis_style_32x32{zoom:1;}
+#jiathis_style_32x32:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
+/*guessYouLike*/
+.guessYouLike{zoom:1;}
+.guessYouLike:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.guessYouLike li{ display:inline;}
+.guessYouLike a{ display:block; float:left; height:25px; width:239px; overflow:hidden; margin-right:5px;}
+.guessYouLike a:hover{ text-decoration:underline;}
+
+/*link countdown*/
+.linkHidden{ display:none;}
+.linkTime{ color:#F00;}
+
+/*playListBox*/
+.musicInfBox .addToPlayList{ color:#090;}
+
+.playListBox{ position:absolute; border:2px solid #f1f1f1; width:250px; right:10px;top:80px; z-index:99999; background:#f9f9f9; padding:5px; display:none;}
+.playListBox h2{ font-weight:bold; border-bottom:1px solid #f1f1f1;}
+.playListBox h2 span{cursor:move; padding:4px 180px 4px 0;}
+.playListBox h2 a{ float:right; }
+
+.player{ width:240px; margin:0 auto;margin-top:10px;}
+
+.reloadPage a{ color:#090;}
+/*htmBox*/
+.htmlBox{ width:760px; border:3px solid #f1f1f1; position:absolute; top:50px; left:50%; margin-left:-380px; z-index:10; background:#fff; padding:5px; display:none;}
+.htmlBox h2{ font-weight:bold;border-bottom:1px solid #f1f1f1; font-size:}
+.htmlBox h2 a{ float:right; color:#F60;}
+.htmlBox h3{ font-weight:bold; color:#060; margin:10px 0;}
+.htmlBox input[type="checkbox"]{ position:relative; top:3px;}
+.htmlBox .plaerStyle1,.htmlBox .plaerStyle2{ height:28px; line-height:28px; margin-bottom:10px;}
+.htmlBox .plaerStyle1 object,.htmlBox .plaerStyle2 object{ margin-right:10px; position:relative; top:4px;}
+.htmlBox .plaerStyle3{ height:73px; margin-bottom:10px;}
+.htmlBox .plaerStyle3 object{ margin-right:10px;}
+.htmlBox .plaerStyle3 input[type="radio"]{ position:relative; top:-30px;}
+.htmlBox textarea{ width:95%; height:120px; padding:5px; position:relative;}
+.htmlBox #mp3Playlist{ width:95%; padding:2px; margin-bottom:5px;}

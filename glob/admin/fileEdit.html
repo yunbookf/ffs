@@ -1,0 +1,66 @@
+     <p id="result"> </p>
+    <form action="?mode=admin&action=fileEdit&editid=VLUN6UU" method="post">
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="2">文件查看编辑</th>
+          </tr>
+        </thead>
+        <tr>
+          <td class="table_right"> 文件名称 ：</td>
+          <td><input type="text" name="FILENAME" value="{html:FILENAME}" title="文件名称" />
+            <span></span></td>
+        </tr>
+        <tr>
+          <td class="table_right"> 分享码 ：</td>
+          <td>{html:FILEKEY}
+          <input type="hidden" name="FILEKEY" value="{html:FILEKEY}"  />
+            <span></span></td>
+        </tr>
+                <tr>
+          <td class="table_right"> 管理密码 ：</td>
+          <td><input type="text" name="FILEPASS" value="{html:FILEPASS}"  title="FILEPASS"/>
+            <span></span></td>
+        </tr>
+        <tr>
+          <td class="table_right"> 文件类型 ：</td>
+          <td>{html:FILETYPE}
+            <span></span></td>
+        </tr>
+                <tr>
+          <td class="table_right"> 文件大小 ：</td>
+          <td>{html:FILESIZE}
+            <span></span></td>
+        </tr>
+                <tr>
+          <td class="table_right"> 上传时间 ：</td>
+          <td>{html:FILETIME}
+            <span></span></td>
+        </tr>
+                <tr>
+          <td class="table_right"> 上传IP ：</td>
+          <td>{html:FILEIP}
+            <span></span></td>
+        </tr>
+                <tr>
+          <td class="table_right"> 最后下载 ：</td>
+          <td>{html:FILELAST}
+            <span></span></td>
+        </tr>
+                <tr>
+          <td class="table_right"> 下载次数 ：</td>
+          <td><input type="text" name="FILEDOWN" value="{html:FILEDOWN}" title="下载次数" />
+            <span></span></td>
+        </tr>
+                <tr>
+          <td class="table_right"> 文件描述 ：</td>
+          <td><textarea name="FILEINFO">{html:FILEINFO}</textarea>
+            <span></span></td>
+        </tr>
+        <tr>
+          <td class="table_right"></td>
+          <td><input type="submit" value="更新文件"  name="thisfile_update" class="roundbtn" /> <input type="button" value="关闭页面"  class="roundbtn"  onclick="window.close();"/></td>
+        </tr>
+
+      </table>
+    </form>

@@ -1,0 +1,196 @@
+<link type="text/css" href="{html:url}glob/css/global.css" rel="stylesheet" />
+<link type="text/css" href="{html:url}app/mp/style.css" rel="stylesheet" />
+<script type="text/javascript" src="{html:url}app/mp/playlist.js"></script>
+<div id="container">
+  <div id="header">
+    <h1 class="logo"><a href="index.php" title="FFS5"><img src="logo.gif" alt="FFS5" title="FFS5" /></a></h1>
+  </div>
+  <div id="content">
+    <div class="musicBox rount_box">
+      <div class="musicInfBox">
+        <div class="musicInf">
+          <p><span>歌曲名：</span>{file:name}</p>
+          <p><span>分享码：</span>{file:id} <a href="?/mp/addmusic-{file:id}" class="addToPlayList">[加入试听列表]</a> {html:favourite}</p>
+          <p><span>歌曲大小：</span>{file:size}</p>
+          <p><span>播放次数：</span>{file:down}</p>
+          <p><span>上传时间：</span>{file:up}</p>
+          <p><span>在线试听：</span>
+            <object type="application/x-shockwave-flash" data="{html:url}app/mp/play.swf?mp3={file:downlink}" width="240" height="20" id="dewplayer-vol" name="dewplayer-vol">
+              <param name="wmode" value="transparent" />
+              <param name="movie" value="{html:url}app/mp/play.swf?mp3={file:downlink}" />
+            </object>
+          </p>
+        </div>
+        <p class="line">&nbsp;</p>
+        <h2>歌曲简介</h2>
+        <div class="infoContent">{file:info}</div>
+        <p class="line">&nbsp;</p>
+      </div>
+      <div class="musicLink">
+        <p><span>下载地址：</span><span class="linkHidden"><a href="{file:downlink}"><img src="app/mp/bendi.png" /></a></span><span class="linkTime" timer="{file:LINK_COUNTDOWN}">地址获取中...</span></p>
+        <p class="line">&nbsp;</p>
+        <p><span>外链地址：</span><span class="linkHidden">
+          <object type="application/x-shockwave-flash" data="{html:url}glob/copy/clipboard.swf" width="52" height="25" id="forLoadSwf" name="forLoadSwf" style="visibility: visible; ">
+            <param name="movie" value="{html:url}glob/copy/clipboard.swf" />
+            <param name="wmode" value="transparent">
+            <param name="allowScriptAccess" value="always">
+            <param name="flashvars" value="content={file:link}&amp;uri={html:url}glob/copy/flash_copy_btn.png">
+          </object>
+          &nbsp;{file:link}</span><span class="linkTime" timer="{file:LINK_COUNTDOWN}">地址获取中...</span></p>
+        <p class="line">&nbsp;</p>
+        <p><span>欣赏地址：</span>
+          <object type="application/x-shockwave-flash" data="{html:url}glob/copy/clipboard.swf" width="52" height="25" id="forLoadSwfA" name="forLoadSwfA" style="visibility: visible; ">
+            <param name="movie" value="{html:url}glob/copy/clipboard.swf" />
+            <param name="wmode" value="transparent">
+            <param name="allowScriptAccess" value="always">
+            <param name="flashvars" value="content={file:viewlink}&amp;uri={html:url}glob/copy/flash_copy_btn.png">
+          </object>
+          &nbsp;<a href="{file:viewlink}">{file:viewlink}</a> </p>
+        <p class="line">&nbsp;</p>
+        <div class="guessYouLike">
+          <h2>猜你喜欢</h2>
+          <ul>
+            {file:youlike}
+          </ul>
+        </div>
+        <p class="line">&nbsp;</p>
+        <p> 
+          <!-- JiaThis Button BEGIN -->
+        <div id="jiathis_style_32x32"> <a class="jiathis_button_tsina"></a> <a class="jiathis_button_tqq"></a> <a class="jiathis_button_qzone"></a> <a class="jiathis_button_renren"></a> <a class="jiathis_button_tianya"></a> <a class="jiathis_button_tifeng"></a> <a class="jiathis_button_tsohu"></a> <a class="jiathis_button_t163"></a> <a class="jiathis_button_email"></a> <a class="jiathis_button_feixin"></a> </div>
+        <script type="text/javascript" src="http://v2.jiathis.com/code_mini/jia.js" charset="utf-8"></script> 
+        <!-- JiaThis Button END -->
+        </p>
+        <div class="musicTip round_box"> 提示：目前外链的有效时间为{html:days}天，您需要每{html:days}天到本页重新获取外链。每次刷新本页，您获取的外链地址有效期将从刷新时计算。 </div>
+        <p class="line">&nbsp;</p>
+        <div class="AD">
+          <h2>赞助商广告</h2>
+          <div>{html:ad}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+function copySuccess(){
+	alert("复制成功！");
+}
+</script>
+<style type="text/css">
+#playListBox{ display:{playlist:display};{playlist:position}}
+</style>
+<div class="playListBox rount_box" id="playListBox" >
+  <h2><a href="javascript:;" title="关闭"onclick="javascript:document.getElementById('jquery_jplayer_1').innerHTML='';closebox('playListBox');">X</a><span>试听列表</span></h2>
+<link type="text/css" href="app/mp/jplayer/jplayer.blue.monday.css"  rel="stylesheet" />
+<script type="text/javascript" src="app/mp/jplayer/js/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="app/mp/jplayer/js/jplayer.playlist.min.js"></script>
+<script type="text/javascript" src="app/mp/jplayer/js/drag.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+$(document).ready(function(){
+	new jPlayerPlaylist({
+		jPlayer: "#jquery_jplayer_1", 
+		cssSelectorAncestor: "#jp_container_1"
+	}, [
+		{playlist:list}
+	], {
+		swfPath: "js",
+		supplied: "mp3",
+		wmode: "window"
+	});
+});
+//]]>
+</script>
+		<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+		<div id="jp_container_1" class="jp-audio">
+			<div class="jp-type-playlist">
+				
+				<div class="jp-playlist">
+					<ul>
+						<li></li>
+					</ul>
+				</div>
+                <div class="jp-gui jp-interface">
+					<ul class="jp-controls">
+						<li><a href="javascript:;" class="jp-previous" tabindex="1" title="上一首">previous</a></li>
+						<li><a href="javascript:;" class="jp-play" tabindex="1" title="播放">play</a></li>
+						<li><a href="javascript:;" class="jp-pause" tabindex="1" title="暂停">pause</a></li>
+						<li><a href="javascript:;" class="jp-next" tabindex="1" title="下一首">next</a></li>
+						<li><a href="javascript:;" class="jp-stop" tabindex="1" title="停止">stop</a></li>
+						<li><a href="javascript:;" class="jp-mute" tabindex="1" title="静音">mute</a></li>
+						<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="打开声音">unmute</a></li>
+						<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="放大音量">max volume</a></li>
+					</ul>
+					<div class="jp-progress">
+						<div class="jp-seek-bar">
+							<div class="jp-play-bar"></div>
+						</div>
+					</div>
+					<div class="jp-volume-bar">
+						<div class="jp-volume-bar-value"></div>
+					</div>
+					<div class="jp-time-holder">
+						<div class="jp-current-time"></div>
+						<div class="jp-duration"></div>
+					</div>
+					<ul class="jp-toggles">
+						<li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="重新排序">shuffle</a></li>
+						<li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="恢复排序">shuffle off</a></li>
+						<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="循环播放">repeat</a></li>
+						<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="关闭循环">repeat off</a></li>
+					</ul>
+				</div>
+				<div class="jp-no-solution">
+					<span>Update Required</span>
+					To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+				</div>
+			</div>
+		</div>
+  
+  <p style="text-align:center;" class="reloadPage"><a href="javascript:;" onclick="openbox('htmlBox');" title="想放到自己的网站上？点我吧">转帖列表HTML代码</a> | <a href="?/mp/cutallmusic" title="清空播放列表">清空播放列表</a></p>
+</div>
+<div class="htmlBox round_box" id="htmlBox">
+  <h2><a href="javascript:;" title="关闭" onclick="closebox('htmlBox');">关闭</a>转帖HTML代码</h2>
+  <p>
+  <h3>选择模式</h3>
+  <div class="playerMode" id="playerMode">
+    <input type="checkbox"  name="autostart" value="&amp;autostart=1"  id="autostart"/>
+    <label for="autostart">自动播放</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="checkbox"  name="autoplay" value="&amp;autoplay=1" id="autoplay" />
+    <label for="autoplay">循环播放</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="checkbox"  name="randomplay" value="&amp;randomplay=1" id="randomplay" />
+    <label for="randomplay">随机播放</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="checkbox"  name="showtime" value="&amp;showtime=1" id="showtime" />
+    <label for="showtime">显示时间</label>
+    </div>
+  </p>
+
+    <h3>风格选择</h3>
+    <p class="plaerStyle1"><input type="radio" name="version" value="mini|160|20" checked="checked"  /><object type="application/x-shockwave-flash" data="{html:url}app/mp/player/dewplayer-mini.swf" width="160" height="20" id="dewplayer" name="dewplayer"> <param name="wmode" value="transparent" /><param name="movie" value="{html:url}app/mp/player/dewplayer-mini.swf" /> <param name="flashvars" value="mp3={playlist:mp3list}" /> </object>
+    <input type="radio" name="version" value="classic|200|20"  /><object type="application/x-shockwave-flash" data="{html:url}app/mp/player/dewplayer-classic.swf" width="200" height="20" id="dewplayer" name="dewplayer"> <param name="wmode" value="transparent" /><param name="movie" value="{html:url}app/mp/player/dewplayer-classic.swf" /> <param name="flashvars" value="mp3={playlist:mp3list}" /> </object>
+    <input type="radio" name="version" value="vol|240|20" /><object type="application/x-shockwave-flash" data="{html:url}app/mp/player/dewplayer-vol.swf" width="240" height="20" id="dewplayer" name="dewplayer"> <param name="wmode" value="transparent" /><param name="movie" value="{html:url}app/mp/player/dewplayer-vol.swf" /> <param name="flashvars" value="mp3={playlist:mp3list}" /> </object>
+     </p>
+    <p class="plaerStyle2"><input type="radio" name="version" value="multie|240|20" /><object type="application/x-shockwave-flash" data="{html:url}app/mp/player/dewplayer-multi.swf" width="240" height="20" id="dewplayer" name="dewplayer"> <param name="wmode" value="transparent" /><param name="movie" value="{html:url}app/mp/player/dewplayer-multi.swf" /> <param name="flashvars" value="mp3={playlist:mp3list}" /> </object>
+   <input type="radio" name="version" value="rect|240|20" /> <object type="application/x-shockwave-flash" data="{html:url}app/mp/player/dewplayer-rect.swf" width="240" height="20" id="dewplayer" name="dewplayer"> <param name="wmode" value="transparent" /><param name="movie" value="{html:url}app/mp/player/dewplayer-rect.swf" /> <param name="flashvars" value="mp3={playlist:mp3list}" /> </object></p>
+    
+    <p class="plaerStyle3"><input type="radio" name="version" value="bubble|250|65"  /><object type="application/x-shockwave-flash" data="{html:url}app/mp/player/dewplayer-bubble.swf" width="250" height="65" id="dewplayer" name="dewplayer"> <param name="wmode" value="transparent" /><param name="movie" value="{html:url}app/mp/player/dewplayer-bubble.swf" /> <param name="flashvars" value="mp3={playlist:mp3list}" /> </object>
+  
+    <input type="radio" name="version" value="bubble-vol|250|65"/><object type="application/x-shockwave-flash" data="{html:url}app/mp/player/dewplayer-bubble-vol.swf" width="250" height="65" id="dewplayer" name="dewplayer"> <param name="wmode" value="transparent" /><param name="movie" value="{html:url}app/mp/player/dewplayer-bubble-vol.swf" /> <param name="flashvars" value="mp3={playlist:mp3list}" /> </object></p>
+  <h3>复制下面代码（可加入博客，个人网站等页面中）</h3>
+  <script type="text/javascript">
+  	window.onload=function()
+	{
+		htmlCode('{html:url}','{playlist:mp3list}');
+	}
+  </script>
+  <p><textarea name="htmlCode" id="htmlCode"><object type="application/x-shockwave-flash" data="{html:url}app/mp/player/dewplayer-mini.swf" width="240" height="20" id="dewplayer" name="dewplayer"><param name="wmode" value="transparent" /><param name="movie" value="{html:url}app/mp/player/dewplayer-mini.swf" /><param name="flashvars" value="mp3={playlist:mp3list}" /></object></textarea></p>
+  <p>以上内容请右键复制文本框代码</p>
+  <h3>以下为随机播放音乐列表外链</h3>
+  <p><input type="text" name="mp3Playlist" id="mp3Playlist" value="{playlist:randomlist}" /></p>
+  <p><object type="application/x-shockwave-flash" data="{html:url}glob/copy/clipboard.swf" width="52" height="25" id="forLoadSwfA" name="forLoadSwfA" style="visibility: visible; ">
+            <param name="movie" value="{html:url}glob/copy/clipboard.swf" />
+            <param name="wmode" value="transparent">
+            <param name="allowScriptAccess" value="always">
+            <param name="flashvars" value="content={playlist:randomlist}&amp;uri={html:url}glob/copy/flash_copy_btn.png">
+          </object></p>
+</div>

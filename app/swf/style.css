@@ -1,0 +1,32 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+
+.swfBox { border:1px solid #f1f1f1; padding:10px; background:url(swf.gif) no-repeat 100px 30px; }
+swfInfBox { }
+.swfInf { width:370px; margin-left:369px; border-left:1px solid #f1f1f1; }
+.swfAbout { border:1px solid #f1f1f1; border-left:none; border-right:none; clear:both; }
+.swfInf p { padding-left:30px; }
+.swfLink a { color:#06C; }
+.swfTip { margin:5px; border:1px solid #f1f1f1; padding:5px; }
+.swfLink p { line-height:25px; }
+.swfLink object { position:relative; top:5px; }
+.swfLink img { position:relative; top:5px; }
+#showSwf { width:300px; height:150px; margin-top:-5px; float:left; margin-left:30px;  }
+.swfBox .line{border-bottom:1px solid #f1f1f1; height:1px; margin:5px 0; overflow:hidden; clear:both;}
+.swfBox h2 { font-weight:bold; }
+.infoContent{word-break:break-all;}
+.infoContent a{ color:#06C;}
+.infoContent a:hover{ text-decoration:underline;}
+#jiathis_style_32x32{zoom:1;}
+#jiathis_style_32x32:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
+/*link countdown*/
+.linkHidden{ display:none;}
+.linkTime{ color:#F00;}
+
+/*guessYouLike*/
+.guessYouLike{zoom:1;}
+.guessYouLike:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.guessYouLike li{ display:inline;}
+.guessYouLike a{ display:block; float:left; height:25px; width:239px; overflow:hidden; margin-right:5px;}
+.guessYouLike a:hover{ text-decoration:underline;}

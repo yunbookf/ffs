@@ -1,0 +1,30 @@
+ <p id="result"> </p>
+ <form action="?mode=admin&action=fileList" method="post">
+    <table class="table fileslist" style="width:100%">
+      <thead>
+        <tr>
+          <th colspan="9">文件管理<select name="filter">{html:filter}</select><input type="text" style="width:200px;" name="data" value="{html:data}" /> <input type="submit" value="搜索" class="roundbtn" /> <a href="?mode=admin&action=fileList">显示全部</a></th>
+        </tr>
+      <tr class="table_title">
+        <td width="3%"><input type="checkbox" title="全选" /></td>
+        <td width="7%">文件ID</td>
+        <td width="40%">文件名</td>
+        <td width="6%">文件密码</td>
+        <td width="6%">文件类型</td>
+        <td width="8%">文件字节</td>
+        <td width="12%">上传时间</td>
+        <td width="12%">最后下载</td>
+        <td width="6%">下载次数</td>
+      </tr>
+      </thead>
+     <tbody>
+        {html:filelist}     
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="10"><input type="submit" value="删除所选"  name="files_del" class="roundbtn" /></td>
+        </tr>
+        <tr><td colspan="10" class="pages">共{html:counts}个文件   {html:previouspage}   <select onchange="javascript:window.location.href=(this.options[this.selectedIndex].value)">{html:pages}</select> {html:nextpage}</td></tr>
+      </tfoot>
+    </table>
+</form>

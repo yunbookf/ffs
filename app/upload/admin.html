@@ -1,0 +1,46 @@
+
+<p id="result"> </p>
+<form action="?mode=upload&action=index" method="post">
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="3">运行参数——上传参数设置</th>
+      </tr>
+    </thead>
+    <tr>
+      <td class="table_right"> 单次上传个数设定 ：</td>
+      <td style="width:50%;"><input type="text" name="UPLOAD_MAX" value="{html:UPLOAD_MAX}" title="单次上传个数设定" /></td>
+      <td><span>（个）</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 每个文件大小限制 ：</td>
+      <td><input type="text" name="UPLOAD_SIZE" value="{html:UPLOAD_SIZE}"  title="每个文件大小限制"/></td>
+      <td><span>（MB）</span> 当前最大可设为<em style="color:#F00;">{html:NOW_UPLOAD_SIZE}</em></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 上传文件类型限制 ：</td>
+      <td><input type="text" name="UPLOAD_TYPE" value="{html:UPLOAD_TYPE}" title="上传文件类型限制" /></td>
+      <td><span>（格式 *.txt;*.rar）</span></td>
+    </tr>
+    <tr>
+      <td class="table_right"> 上传前是否需要填写邮件 ：</td>
+      <td><input type="text" name="UPLOAD_EMAIL" value="{html:UPLOAD_EMAIL}" title="上传前是否需要填写邮件" /></td>
+      <td><span>（0为关闭，1为开启）</span></td>
+    </tr>
+    <thead>
+      <tr>
+        <th colspan="3">接口参数——上传接口</th>
+      </tr>
+    </thead>
+    <tr>
+      <td class="table_right"> 接口代码 ：</td>
+      <td><textarea><a href="javascript:;" onclick="window.open ('http://你的网址/upapi.html', '文件分享', 'height=400, width=506, top=100, left=300, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no')">点此上传文件</a></textarea></td>
+      <td><span>复制此代码插入页面html中 <a href="http://bbs.fps88.com/thread-745-1-1.html" target="_blank">不会用？点此</a></span></td>
+    </tr>
+    <tr>
+      <td class="table_right"></td>
+      <td><input type="submit" value="更新"  name="up_update" class="roundbtn" /></td>
+      <td></td>
+    </tr>
+  </table>
+</form>

@@ -1,0 +1,120 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+
+/* RESET start ↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 
+---------------------------------------------------------------------------------------------------------------*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td { margin: 0; padding: 0; }
+fieldset, img { border: 0; }
+/* remember to define focus styles! */
+:focus { outline: 0; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+abbr, acronym { border: 0; font-variant: normal; }
+input, button, textarea, select, optgroup, option { font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; }
+code, kbd, samp, tt { font-size: 100%; }
+/*@purpose To enable resizing for IE */
+/*@branch For IE6-Win, IE7-Win */
+input, button, textarea, select {  *font-size: 100%;
+}
+ol, ul, dl, li, dd { list-style: none; }
+/* tables still need 'cellspacing="0"' in the markup */
+table { border-collapse: collapse; border-spacing: 0; }
+caption, th { text-align: left; }
+sup, sub { font-size: 100%; vertical-align: baseline; }
+/* remember to highlight anchors and inserts somehow! */
+a:link, a:visited, ins { text-decoration: none; }
+blockquote, q { quotes: none; }
+.clear { height:1%; overflow:hidden; }
+.after { content:"."; display:block; height:0; clear:both; visibility:hidden; zoom:1; }
+a:link { color:#000; }
+a { color:#000; }
+input { height:18px; line-height:18px; padding:0 3px; }
+input[type="text"]:focus,input[type="password"]:focus { background:#F4FFFF; border-color:#FC0;}
+input[type="text"],input[type="password"]{ width:99%; border:1px solid #ccc;}
+textarea{ width:99%; height:80px;border:1px solid #ccc;padding:0 3px; }
+textarea:focus{border-color:#FC0; background:#F4FFFF; }
+/* RESET end*/
+
+/*导航标记*/
+#site_setPage  .site_setPage{color:#fff; background:#003B65; border-bottom:1px solid #f9f9f9; font-weight:bold;}
+#filesPage .filesPage{color:#fff; background:#003B65; border-bottom:1px solid #f9f9f9; font-weight:bold;}
+#singlepagePage .singlepagePage{color:#fff; background:#003B65; border-bottom:1px solid #f9f9f9; font-weight:bold;}
+#clearPage .clearPage{color:#fff; background:#003B65; border-bottom:1px solid #f9f9f9; font-weight:bold;}
+#onlinePage .onlinePage{color:#fff; background:#003B65; border-bottom:1px solid #f9f9f9; font-weight:bold;}
+#adminPage .adminPage{color:#fff; background:#003B65; border-bottom:1px solid #f9f9f9; font-weight:bold;}
+/*layout ↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+------------------------------------------------------------------------------------------------------------*/
+
+
+body { font:12px/25px Verdana, Geneva, sans-serif; background:#f9f9f9; width:100%; height:100%; min-width:1000px; min-height:600px;}
+#container {width:100%; height:100%;}
+.roundbox { -moz-border-radius:8px; -khtml-border-radius:8px; -webkit-border-radius:8px; border-radius:8px; border:1px solid #dfdfdf; background:#fff; }
+.roundbtn { -moz-border-radius:15px; -khtml-border-radius:15px; -webkit-border-radius:15px; border-radius:15px; border:1px solid #dfdfdf; background:#fff; -moz-box-sizing:content-box; -webkit-box-sizing:content-box; -khtml-box-sizing:content-box; box-sizing:content-box; cursor:pointer; border:1px solid #bbb; color:#464646; font-family:"Lucida Grande", Verdana, Arial, "Bitstream Vera Sans", sans-serif; text-decoration:none; font-size:14px!important; line-height:16px; padding:2px 20px;}
+.roundbtn:hover { color:#000; border-color:#666;}
+/*header start
+-----------------------------------------------*/
+#header { width:100%; height:90px; border-bottom:1px solid #ccc; background:#fff; position:relative; }
+#header h1 { padding:20px; padding-left:5px; }
+.welcome { height:25px; width:430px; position:absolute; left:200px; top:10px; }
+.welcome a { margin-left:20px; color:#06F; }
+.top_search { height:18px; width:300px; position:absolute; left:630px; top:10px; }
+.top_search input[type="text"] { width:200px; padding:0 2px; margin-right:10px; }
+.aboutffs{ width:204px; height:84px; position: absolute; top:2px; right:5px; background:url(about_ico.gif) no-repeat center 10px;}
+.aboutffs_text{ background:#F4F5FB; display:none; border:1px solid #ccc; padding:2px 5px;} 
+.aboutffs:hover .aboutffs_text{ display:block;}
+.aboutffs p{ height:16px; line-height:16px;}
+.aboutffs p a{ color:#F30;}
+#header ul { left:200px; border-top:1px solid #ccc; border-left:1px solid #ccc; height:30px; position:absolute; bottom:0; }
+#header ul li { display:inline; }
+#header ul li a { display:block; padding: 0 15px; height:30px; line-height:30px; float:left; border-right:1px solid #ccc; font-size:14px; }
+#header ul li a:hover { color:#fff; background:#003B65; }
+/*header end
+------------------------------------------------*/
+
+
+/*content start
+-------------------------------------------------*/
+#content{ position:absolute; left:0; right:0; top:90px; bottom:0;overflow-y:scroll; overflow-x:auto; _width:100%; padding:10px;}
+.table { border-collapse: collapse; border-spacing: 0; border:1px solid #ccc; width:99%; margin:0 auto;color:#003B65; }
+.table a{ color:#36c; }
+.table a:hover{text-decoration:underline;}
+.table_right{ width:20%; text-align:right; color:#666; font-weight:bold; }
+.table td { border:1px solid #ccc; padding:3px 5px; }
+.table th{border:1px solid #ccc;  padding:3px 5px;font-size:14px; color:#003B65; background:#EAF2FA;}
+.alt{background:#FEF3D1} /*选中背景变色*/
+.table tr:hover{background:#FEF3D1;}
+.table .roundbtn{color:#464646;  }
+.table .roundbtn:hover{text-decoration:none;}
+.table_title{ background:#EEF8FC; font-weight:bold;}
+.table input{ vertical-align:middle;}
+
+/*官方公告 about_ffsSite*/
+.about_ffsSite{margin:0 auto; margin-bottom:10px;}
+/*最新上传和下载最多 file_10*/
+.file_10{ width:99%; margin:0 auto; margin-bottom:10px;zoom:1;}
+.file_10:after{ content:"."; height:0; display:block; clear:both; visibility:hidden; }
+.file_10_new{ width:49%; float:left;}
+.file_10_views{ width:49%; float:right;}
+
+/*提示信息*/
+#result{ width:200px; height:25px;color:#fff; font-weight:bold; text-align:center; position:absolute; z-index:999; top:5px; left:50%; margin-left:-100px;}
+#result p{ background:#21900D; }
+
+/*分页*/
+.pages a{ margin:2px;}
+/*content end
+-------------------------------------------------*/
+
+
+/*footer start
+-------------------------------------------------*/
+
+
+/*footer end
+-------------------------------------------------*/
+/*悬浮菜单*/
+.navEntrance{ position:fixed; left:0; top:150px; width:14px;background:#003B65; border:1px solid #ccc; color:#fff; font-weight:bold; cursor:pointer; line-height:20px;}
+.navMain{ width:80px;background:#003B65; border:1px solid #ccc;position:fixed; left:0; top:150px; display:none;}
+.navMain li a{ height:30px; line-height:30px; font-size:14px; font-weight:bold; text-align:center; color:#fff; border:1px solid #ccc; display:block;}
+.navMain li a:hover{ background:#fff; color:#000;}
+.navEntrance:hover .navMain{ display:block;}

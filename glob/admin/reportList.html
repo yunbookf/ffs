@@ -1,0 +1,26 @@
+ <p id="result"> </p>
+ <form action="?mode=admin&action=reportList" method="post">
+    <table class="table fileslist" style="width:100%">
+      <thead>
+        <tr>
+          <th colspan="9">举报管理 <input type="submit" value="更新举报列表" class="roundbtn" name="updateReportList" /></th>
+        </tr>
+      <tr class="table_title">
+        <td width="3%"><input type="checkbox" title="全选" /></td>
+        <td width="16%">文件分享码</td>
+        <td width="20%">联系邮箱</td>
+        <td width="45%">举报理由</td>
+        <td width="16%">举报时间</td>
+      </tr>
+      </thead>
+     <tbody>
+        {html:filelist}     
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5"><input type="submit" value="删除所选文件"  name="files_del" class="roundbtn" /> <input type="submit" value="删除举报"  name="report_del" class="roundbtn" /> 请及时确认受举报文件</td>
+        </tr>
+        <tr><td colspan="5">共{html:counts}个文件 {html:previouspage} <select onchange="javascript:window.location.href=(this.options[this.selectedIndex].value)">{html:pages}</select> {html:nextpage}</td></tr>
+      </tfoot>
+    </table>
+</form>
